@@ -34,7 +34,6 @@ from core.fastapi_helpers import (
 # 导入API路由
 from api_fastapi import (
     water_depth_router,
-    inference_router,
     gauging_router,
     cache_router,
     health_router,
@@ -100,7 +99,6 @@ def create_app() -> FastAPI:
     # 注册所有路由
     app.include_router(health_router, tags=["健康检查"])
     app.include_router(water_depth_router, tags=["水深度"])
-    app.include_router(inference_router, tags=["推理"])
     app.include_router(gauging_router, tags=["测量站"])
     app.include_router(cache_router, tags=["缓存"])
     app.include_router(raster_router, tags=["栅格数据"])
